@@ -26,6 +26,8 @@ deps/glfw-3.3.8/**
 *.so
 *.dylib
 *.dll
+*.lib
+*.pdb
 
 # Fortran module files
 *.mod

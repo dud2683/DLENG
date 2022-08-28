@@ -3,6 +3,8 @@ workspace "DLENG"
 	configurations { "Debug", "Release", "Dist"}
 
 	
+include "deps/glfw"
+
 
 project "Engine"
 	kind "ConsoleApp"
