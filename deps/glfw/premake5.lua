@@ -1,8 +1,10 @@
 project "GLFW"
 	kind "StaticLib"
-	targetdir "../libs"
+	targetdir "../libs/%{cfg.buildcfg}"
+	objdir "bin-int/%{cfg.buildcfg}"
 	language "C"
 	systemversion "latest"
+	staticruntime "on"
 	
 	
 	files{
@@ -45,4 +47,19 @@ project "GLFW"
 		"_CRT_SECURE_NO_WARNINGS",
 		"_GLFW_WIN32"
 	}
+	
+	filter "configurations:Debug"
+		symbols "On"
+		optimize "Off"
+		runtime "Debug"
+
+	filter "configurations:Release"
+		symbols "On"
+		optimize "On"
+		runtime "Release"
+	 
+	filter "configurations:Dist"
+		symbols "On"
+		optimize "Off"
+		runtime "Release"
 	

@@ -4,6 +4,7 @@ workspace "DLENG"
 
 	
 include "deps/glfw"
+include "deps/glad"
 
 
 project "Engine"
@@ -17,19 +18,31 @@ project "Engine"
 		"src/**.h"
 	}
 	
+	includedirs{
+		"deps/include"
+	}
+	libdirs{
+		"deps/libs/%{cfg.buildcfg}"
+	}
+	links{
+		"opengl32.lib",	
+		"GLFW",
+		"glad"
+	}
+	
 	filter "configurations:Debug"
-      defines { "DL_DEBUG" }
-      symbols "On"
+		defines { "DL_DEBUG" }
+		symbols "On"
 
-   filter "configurations:Release"
-      defines { "DL_RELEASE" }
-	  symbols "On"
-      optimize "On"
-	 
 	filter "configurations:Release"
-      defines { "DL_DIST" }
-	  symbols "On"
-      optimize "Off"
+		defines { "DL_RELEASE" }
+		symbols "On"
+		optimize "On"
+	 
+	filter "configurations:Dist"
+		defines { "DL_DIST" }
+		symbols "On"
+		optimize "Off"
 	  
 
 	filter "system:windows"

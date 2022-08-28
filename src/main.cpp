@@ -1,7 +1,11 @@
 #include <iostream>
+#define GLFW_INCLUDE_NONE
+#include <GLFW/glfw3.h>
 
 int main(){
-	std::cout<<"Hello"<<std::endl;
-	std::cin.get();
-	return 0;
+	if (!glfwInit())
+		std::cout << "Error" << std::endl;
+	else
+		std::cout << "Succes" << std::endl;
+
 }

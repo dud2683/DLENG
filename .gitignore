@@ -1,7 +1,7 @@
 # Custom
-/bin/*
-/bin-int/*
-*.vcxproj
+**/bin/**
+**/bin-int/**
+*.vcxproj**
 *.vcxproj.user
 deps/lib-vc2017/**
 deps/lib-vc2019/**
