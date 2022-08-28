@@ -3,7 +3,7 @@
 **/bin-int/**
 *.vcxproj**
 *.vcxproj.user
-
+deps/include/**
 .vs/**
 
 
