@@ -1,3 +1,14 @@
+# Custom
+/bin/*
+/bin-int/*
+*.vcxproj
+*.vcxproj.user
+deps/lib-vc2017/**
+deps/lib-vc2019/**
+deps/lib-vc2022/**
+deps/glfw-3.3.8/**
+.vs/**
+
 # Prerequisites
 *.d
 
@@ -24,9 +35,11 @@
 *.lai
 *.la
 *.a
-*.lib
+
+
+# Solution files
+*.sln
 
 # Executables
-*.exe
 *.out
 *.app
