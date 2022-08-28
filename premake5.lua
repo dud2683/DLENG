@@ -7,7 +7,8 @@ workspace "DLENG"
 project "Engine"
 	kind "ConsoleApp"
 	language "C++"
-	target "bin/%{cfg.buildcfg}"
+	targetdir "bin/%{cfg.buildcfg}"
+	objdir "bin-int/%{cfg.buildcfg}"
 
 	files{
 		"src/**.cpp",
@@ -27,4 +28,10 @@ project "Engine"
       defines { "DL_DIST" }
 	  symbols "On"
       optimize "Off"
+	  
+
+	filter "system:windows"
+		cppdialect "C++latest"
+		systemversion "latest"
+		staticruntime "On"
 	  
