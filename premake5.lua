@@ -59,8 +59,8 @@ project "Engine"
 		}
 	
 	postbuildcommands{
-		"mkdir $(SolutionDir)\\bin\\%{cfg.buildcfg}\\%{SandboxName} & exit 0",
-		"xcopy $(SolutionDir)\\bin\\%{cfg.buildcfg}\\%{prj.name}\\%{prj.name}.dll $(SolutionDir)\\bin\\%{cfg.buildcfg}\\%{SandboxName}"
+		"mkdir $(SolutionDir)\\bin\\%{cfg.buildcfg}\\%{SandboxName}",
+		"copy $(SolutionDir)\\bin\\%{cfg.buildcfg}\\%{prj.name}\\%{prj.name}.dll $(SolutionDir)\\bin\\%{cfg.buildcfg}\\%{SandboxName} & exit 0"
 	}
 		
 project "Sandbox"
@@ -77,7 +77,8 @@ project "Sandbox"
 	}
 	
 	includedirs{
-		"Engine/src"
+		"Engine/src",
+		"Engine/deps/include"
 	}
 	links{"Engine"}
 	

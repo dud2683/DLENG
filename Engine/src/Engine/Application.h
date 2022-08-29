@@ -5,7 +5,7 @@ namespace DLENG {
 	public:
 		Application();
 		~Application();
-		void Run();
+		virtual void Run();
 	};
 	Application* CreateApplication();
 }
