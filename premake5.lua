@@ -59,7 +59,8 @@ project "Engine"
 		}
 	
 	postbuildcommands{
-		"copy $(SolutionDir)\\bin\\%{cfg.buildcfg}\\%{prj.name}\\%{prj.name}.dll $(SolutionDir)\\bin\\%{cfg.buildcfg}\\%{SandboxName}"
+		"mkdir $(SolutionDir)\\bin\\%{cfg.buildcfg}\\%{SandboxName} & exit 0",
+		"xcopy $(SolutionDir)\\bin\\%{cfg.buildcfg}\\%{prj.name}\\%{prj.name}.dll $(SolutionDir)\\bin\\%{cfg.buildcfg}\\%{SandboxName}"
 	}
 		
 project "Sandbox"
