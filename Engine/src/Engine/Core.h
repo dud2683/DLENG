@@ -5,3 +5,5 @@
 #define ENG_API _declspec(dllimport)
 
 #endif
+
+#include "Log.h"
