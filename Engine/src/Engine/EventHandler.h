@@ -1,9 +1,13 @@
 #pragma once
 #include "Events/Event.h"
-class EventHandler{
-public:
-	EventHandler();
-	~EventHandler();
-
-};
-
+#include <queue>
+namespace DLENG {
+	class EventHandler {
+	public:
+		EventHandler();
+		~EventHandler();
+		void AddEvent(Event ev);
+	private:
+		std::queue<Event> _events;
+	};
+}

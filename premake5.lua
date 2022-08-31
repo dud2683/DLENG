@@ -22,7 +22,8 @@ project "Engine"
 	}
 	
 	includedirs{
-		"Engine/deps/include"
+		"Engine/deps/include",
+		"Engine/src/Engine/Core"
 	}
 	libdirs{
 		"%{prj.name}/deps/libs/%{cfg.buildcfg}"
@@ -77,8 +78,9 @@ project "Sandbox"
 	}
 	
 	includedirs{
-		"Engine/src",
-		"Engine/deps/include"
+		"Engine/deps/include",
+		"Engine/src/Engine/Core",
+		"Engine/src"
 	}
 	links{"Engine"}
 	

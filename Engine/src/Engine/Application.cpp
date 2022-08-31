@@ -1,4 +1,6 @@
 #include "Application.h"
+#include "Events/KeyEvent.h"
+#include <functional>
 
 #define LOG(command, trace, success, failure) DL_CORE_TRACE(trace);\
 	if (command) {DL_CORE_INFO(success);}\
@@ -27,6 +29,15 @@ namespace DLENG {
 
 		LOG(gladLoadGLLoader((GLADloadproc)glfwGetProcAddress),
 			"Loading Glad", "GLAD load SUCCESS", "GLAD load FAILED");
+
+		
+		LOG(glfwSetKeyCallback(_windows.front().GetWindow(), glfwKeyCallback),
+			"Setting Key callback", "Key callback Success", "Key callback Failed");
+
+	}
+	void Application::glfwKeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
+	{
+		Application::s_eventHandler.AddEvent(KeyEvent(key, scancode, action, mods));
 
 	}
 }

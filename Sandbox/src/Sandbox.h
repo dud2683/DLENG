@@ -1,6 +1,6 @@
 #pragma once
 #include <Engine.h>
-#include <Engine/Core/Main.h>
+#include <Main.h>
 
 class Sandbox : public DLENG::Application {
 public:

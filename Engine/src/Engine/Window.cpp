@@ -1,5 +1,5 @@
 #include "Window.h"
-#include "Log.h"
+#include <Core.h>
 
 
 DLENG::Window::Window(int width, int height, const char* title)

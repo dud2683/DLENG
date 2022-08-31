@@ -1,5 +1,5 @@
 #pragma once
-#include "Core.h"
+#include "Core/Core.h"
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
@@ -11,6 +11,7 @@ namespace DLENG {
 	public:
 		Window(int width = 640, int height = 480, const char* title = "My Title");
 		~Window();
+		GLFWwindow* GetWindow() { return _glfwWindow; }
 	private:
 		std::list<Layer> _layers;
 
